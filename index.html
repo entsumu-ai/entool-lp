@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta property="og:title" content="えんつむ | 個人開発者・ツール配布">
-  <meta property="og:description" content="SNS運用を仕組み化するツールを作り続けています。えんつ〜る（Threads運用管理）配布中。">
+  <meta property="og:description" content="Threads運用を仕組み化するツールを作り続けています。えんつ〜る（Threads運用管理）配布中。">
   <meta property="og:image" content="https://entool-lp.pages.dev/ogp.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>えんつむ | 個人開発者・ツール配布</title>
-  <meta name="description" content="個人開発者えんつむの公式ページ。SNS運用を仕組み化するツールを作っています。Threads運用管理ツール「えんつ〜る」配布中。">
+  <meta name="description" content="個人開発者えんつむの公式ページ。Threads運用を仕組み化するツールを作っています。Threads運用管理ツール「えんつ〜る」配布中。">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -364,6 +364,10 @@
     }
     .badge-paid { background: #fef3c7; color: #92400e; }
     .badge-soon { background: #f1f5f9; color: #94a3b8; }
+    .badge-free { background: #dcfce7; color: #166534; }
+
+    /* ── Template card (highlight) ── */
+    .tool-card-highlight { border-color: var(--coral); box-shadow: 0 4px 20px rgba(244,63,94,0.10); }
 
     .tool-card-body {
       padding: 14px 22px 6px;
@@ -543,17 +547,16 @@
       <h1 class="hero-name">えんつむ</h1>
       <p class="hero-role">GAS · AI · Threads</p>
       <p class="hero-copy">
-        SNS運用の面倒な部分を<br>
+        Threads運用の面倒な部分を<br>
         <strong>仕組み化</strong>するツールを<br>
         スマホで完結できるよう<br>
         作り続けています
       </p>
       <div class="hero-btns">
-        <a href="https://lin.ee/G4Gw7kT"
-           target="_blank" rel="noopener noreferrer"
-           onclick="gtag('event','click_line',{'event_category':'conversion','event_label':'hero_cta'})"
-           class="btn-hero-line">
-          💬 LINEを追加する（無料）
+        <a href="#template"
+           onclick="gtag('event','click_template',{'event_category':'conversion','event_label':'hero_cta'})"
+           class="btn-hero-line" style="background:var(--coral);">
+          🗂️ 無料テンプレを見る
         </a>
         <a href="https://brain-market.com/u/entsumu/a/bxMjNzMjMgoTZsNWa0JXY"
            target="_blank" rel="noopener noreferrer"
@@ -566,46 +569,46 @@
     </div>
   </section>
 
-  <!-- ▼ LINE -->
-  <section class="line-section">
+  <!-- ▼ Free Template -->
+  <section class="tools-section" id="template">
     <div class="section-wrap">
-      <p class="sec-label">01 / Connect</p>
-      <div class="line-card">
-        <div class="line-card-top">
-          <div class="line-icon-box">💬</div>
-          <div>
-            <div class="line-card-title">公式LINE</div>
-            <div class="line-card-sub">登録者限定で配信しています</div>
+      <p class="sec-label">01 / Free Template</p>
+
+      <div class="tool-card tool-card-highlight">
+        <div class="tool-card-head">
+          <div class="tool-icon" style="background:#fff1f2;">🗂️</div>
+          <div class="tool-meta">
+            <div class="tool-name">Threads投稿 予約管理テンプレ</div>
+            <div class="tool-tagline">Googleスプレッドシート・コピーしてすぐ使えます</div>
+            <span class="badge badge-free">無料配布中</span>
           </div>
         </div>
-        <ul style="list-style:none;padding:0 0 16px;display:flex;flex-direction:column;gap:8px;">
-          <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#0f172a;">
-            <span style="color:#06C755;font-weight:700;flex-shrink:0;">✓</span>
-            Threads仕組み化のノウハウを定期配信
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#0f172a;">
-            <span style="color:#06C755;font-weight:700;flex-shrink:0;">✓</span>
-            ツールの最新情報をいち早くお届け
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#0f172a;">
-            <span style="color:#06C755;font-weight:700;flex-shrink:0;">✓</span>
-            購入前の相談・サポートも無料で受け付け
-          </li>
+        <div class="tool-card-body">
+          僕がThreadsを毎日8投稿・仕組みで回している構成をそのままテンプレ化しました。「その場で考えて書く」から「ストックから出す」に変えるための最初の一歩です。
+        </div>
+        <ul class="feat-list">
+          <li><span class="feat-num">01</span>投稿カレンダー：文字数と500字チェックが自動</li>
+          <li><span class="feat-num">02</span>枠設計：時間帯ごとに何を投稿するか先に決める設計表</li>
+          <li><span class="feat-num">03</span>ネタストック：21日ルール（同テーマの再使用OK日）を自動計算</li>
+          <li><span class="feat-num">04</span>週次ふりかえり：数字と気づきを1行残すだけ</li>
         </ul>
-        <a href="https://lin.ee/G4Gw7kT"
-           target="_blank" rel="noopener noreferrer"
-           onclick="gtag('event','click_line',{'event_category':'engagement','event_label':'line_card'})"
-           class="btn-line">
-          💬 LINEを追加する
-        </a>
+        <div class="tool-card-foot">
+          <a href="https://docs.google.com/spreadsheets/d/1xcJGZGk_oJHBlAR7Z1LDypU47CTDvmdqfDskrB-4QWI/copy"
+             target="_blank" rel="noopener noreferrer"
+             onclick="gtag('event','click_template',{'event_category':'conversion','event_label':'template_card'})"
+             class="btn-coral">
+            無料でテンプレを開く →
+          </a>
+        </div>
       </div>
+
     </div>
   </section>
 
   <hr class="divider">
 
   <!-- ▼ Tools -->
-  <section class="tools-section">
+  <section class="tools-section" style="background:#fff;">
     <div class="section-wrap">
       <p class="sec-label">02 / Tools</p>
 
@@ -645,7 +648,7 @@
           <div class="tool-meta">
             <div class="tool-name">exPlayer</div>
             <div class="tool-tagline">MP3 / WAV / MIDI 対応プレーヤー（Windows専用）</div>
-            <span class="badge" style="background:#dcfce7;color:#166534;">無料配布中</span>
+            <span class="badge badge-free">無料配布中</span>
           </div>
         </div>
         <div class="tool-card-body">
@@ -661,6 +664,44 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ▼ LINE -->
+  <section class="line-section">
+    <div class="section-wrap">
+      <p class="sec-label">03 / Connect</p>
+      <div class="line-card">
+        <div class="line-card-top">
+          <div class="line-icon-box">💬</div>
+          <div>
+            <div class="line-card-title">公式LINE</div>
+            <div class="line-card-sub">登録者限定で配信しています</div>
+          </div>
+        </div>
+        <ul style="list-style:none;padding:0 0 16px;display:flex;flex-direction:column;gap:8px;">
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#0f172a;">
+            <span style="color:#06C755;font-weight:700;flex-shrink:0;">✓</span>
+            Threads仕組み化のノウハウを定期配信
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#0f172a;">
+            <span style="color:#06C755;font-weight:700;flex-shrink:0;">✓</span>
+            ツールの最新情報をいち早くお届け
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#0f172a;">
+            <span style="color:#06C755;font-weight:700;flex-shrink:0;">✓</span>
+            購入前の相談・サポートも無料で受け付け
+          </li>
+        </ul>
+        <a href="https://lin.ee/G4Gw7kT"
+           target="_blank" rel="noopener noreferrer"
+           onclick="gtag('event','click_line',{'event_category':'engagement','event_label':'line_card'})"
+           class="btn-line">
+          💬 LINEを追加する
+        </a>
+      </div>
     </div>
   </section>
 
