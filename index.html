@@ -670,19 +670,25 @@
           <div class="tool-icon" style="background:#eff6ff;">🖌️</div>
           <div class="tool-meta">
             <div class="tool-name">MosaicPaint</div>
-            <div class="tool-tagline">モザイク処理ペイントアプリ（Web版公開中・Win版準備中）</div>
+            <div class="tool-tagline">モザイク処理ペイントアプリ（Win / Web対応）</div>
             <span class="badge badge-free">無料配布中</span>
           </div>
         </div>
         <div class="tool-card-body">
           画像を投稿する前のモザイク処理に、軽量で簡単に使えるアプリが見当たらず自分で作りました。Snipping Toolなどからのコピー貼り付けにも対応しています。
         </div>
-        <div class="tool-card-foot">
+        <div class="tool-card-foot" style="display:flex; gap:8px;">
           <a href="https://entsumu-ai.github.io/mosaic-paint/"
              target="_blank" rel="noopener noreferrer"
-             onclick="gtag('event','click_mosaic',{'event_category':'engagement','event_label':'tool_card_mosaic'})"
-             class="btn-coral" style="background:#2563eb;">
-            無料で使ってみる →
+             onclick="gtag('event','click_mosaic',{'event_category':'engagement','event_label':'tool_card_mosaic_web'})"
+             class="btn-coral" style="background:#2563eb; flex:1;">
+            Webで使う →
+          </a>
+          <a href="https://github.com/entsumu-ai/mosaic-paint/releases/latest"
+             target="_blank" rel="noopener noreferrer"
+             onclick="gtag('event','click_mosaic',{'event_category':'engagement','event_label':'tool_card_mosaic_win'})"
+             class="btn-coral" style="background:#16a34a; flex:1;">
+            Win版DL →
           </a>
         </div>
       </div>
