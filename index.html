@@ -12,6 +12,13 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(){ window.dataLayer.push(arguments); }
     window.gtag('js', new Date());
+    // 自分の確認アクセスを数えない(2026-09-28): ?internal=1 で一度開いた端末・ブラウザは、以後GA4へ送らない。?internal=0 で解除
+    try {
+      var internalFlag = new URLSearchParams(location.search).get('internal');
+      if (internalFlag === '1') localStorage.setItem('entsumu_internal', '1');
+      if (internalFlag === '0') localStorage.removeItem('entsumu_internal');
+      if (localStorage.getItem('entsumu_internal') === '1') window['ga-disable-G-HL6L4LDXVD'] = true;
+    } catch (e) {}
     window.gtag('config', 'G-HL6L4LDXVD');
   </script>
 
