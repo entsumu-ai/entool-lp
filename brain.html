@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>えんつ～る｜Threads運用管理ツール</title>
+  <meta name="robots" content="noindex">
+  <!-- Threadsなどでリンクを貼った時のカード表示 -->
+  <meta property="og:title" content="えんつ～る｜Threads運用管理ツール">
+  <meta property="og:description" content="AIで作った下書きを貼って『ready』にするだけ。予約と記録をまとめる買い切りツール。">
+  <meta property="og:image" content="https://entool-lp-80z.pages.dev/ogp-sales.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- 2026-09-30: Threadsの投稿からBrainへ直接送るための転送ページ。
+       Brainには閲覧数の機能が無いため、ここを通った人数をGA4の click_brain_threads で数えてからBrainへ移る。
+       ?from=promo のように付けると、event_label に入れて投稿ごとに区別できる -->
+  <noscript><meta http-equiv="refresh" content="0;url=https://brain-market.com/u/entsumu/a/bxMjNzMjMgoTZsNWa0JXY"></noscript>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HL6L4LDXVD"></script>
+  <script>
+    var BRAIN_URL = 'https://brain-market.com/u/entsumu/a/bxMjNzMjMgoTZsNWa0JXY';
+    var moved = false;
+    function goBrain() { if (moved) return; moved = true; location.replace(BRAIN_URL); }
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); }
+    window.gtag('js', new Date());
+    // 自分の確認アクセスを数えない(index.htmlと同じ仕組み): ?internal=1 で一度開いた端末は以後GA4へ送らない
+    var internal = false;
+    try {
+      var params = new URLSearchParams(location.search);
+      if (params.get('internal') === '1') localStorage.setItem('entsumu_internal', '1');
+      if (params.get('internal') === '0') localStorage.removeItem('entsumu_internal');
+      internal = localStorage.getItem('entsumu_internal') === '1';
+      if (internal) window['ga-disable-G-HL6L4LDXVD'] = true;
+    } catch (e) {}
+    window.gtag('config', 'G-HL6L4LDXVD');
+
+    var from = 'threads';
+    try { from = new URLSearchParams(location.search).get('from') || 'threads'; } catch (e) {}
+
+    if (internal) {
+      goBrain();
+    } else {
+      window.gtag('event', 'click_brain_threads', {
+        event_category: 'conversion',
+        event_label: from,
+        transport_type: 'beacon',
+        event_callback: goBrain
+      });
+      // GA4の読み込みが遅い・ブロックされている時も、待たせずに移動する
+      setTimeout(goBrain, 1200);
+    }
+  </script>
+  <style>
+    body { font-family: sans-serif; background: #0f172a; color: #e2e8f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 16px; box-sizing: border-box; text-align: center; }
+    a { color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <p>えんつ～るのページへ移動しています…<br>
+  自動で移動しない場合は<a href="https://brain-market.com/u/entsumu/a/bxMjNzMjMgoTZsNWa0JXY">こちら</a>を開いてください。</p>
+</body>
+</html>
