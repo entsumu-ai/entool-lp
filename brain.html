@@ -34,7 +34,8 @@
       internal = localStorage.getItem('entsumu_internal') === '1';
       if (internal) window['ga-disable-G-HL6L4LDXVD'] = true;
     } catch (e) {}
-    window.gtag('config', 'G-HL6L4LDXVD');
+    // page_viewは送らない（LP訪問者数に転送ページの通過を混ぜないため。数えるのは click_brain_threads だけ）
+    window.gtag('config', 'G-HL6L4LDXVD', { send_page_view: false });
 
     var from = 'threads';
     try { from = new URLSearchParams(location.search).get('from') || 'threads'; } catch (e) {}
